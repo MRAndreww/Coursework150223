@@ -1,7 +1,8 @@
 public class Main {
 
-    public static void main(String[] arg) {
-        Employee[] employee = new Employee[10];
+    public static Employee[] employee = new Employee[10];
+
+    public static void main(String[] arg) {;
         employee[0] = new Employee("Petr Ivanovich Beck", 1, 30000);
         employee[1] = new Employee("Sergei Ivanovich Beck", 1, 20000);
         employee[2] = new Employee("Inna Ivanovna Beck", 1, 10000);
@@ -54,7 +55,7 @@ public class Main {
         }
         return emploeeMaxSalary;
     }
-    public static int averageSalary (Employee[] employees) {
+    public static double averageSalary (Employee[] employees) {
         int salary = totalSalary(employees);
         return salary/employees.length;
     }
