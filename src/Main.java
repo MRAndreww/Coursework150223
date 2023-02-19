@@ -14,54 +14,54 @@ public class Main {
         employee[8] = new Employee("Elena Swegeevna Noname", 2, 90000);
         employee[9] = new Employee("Irina Petrovna Be", 2, 90000);
 
-        printAll(employee);
-        System.out.println("Общее значение зарплаты равно " + totalSalary(employee));
-        System.out.println("Минимальное значение зарплаты равно " + getMinSalary(employee));
-        System.out.println("Максимальное значение зарплаты равно " + getMaxSalary(employee));
-        System.out.println("Среднее значение зарплаты равно " + averageSalary(employee));
-        getFullname(employee);
+        printAll();
+        System.out.println("Общее значение зарплаты равно " + totalSalary());
+        System.out.println("Минимальное значение зарплаты равно " + getMinSalary());
+        System.out.println("Максимальное значение зарплаты равно " + getMaxSalary());
+        System.out.println("Среднее значение зарплаты равно " + averageSalary());
+        getFullname();
     }
 
-    public static void printAll(Employee[] employees) {
-        for (int i = 0; i < employees.length; i++) {
-            System.out.println(employees[i]);
+    public static void printAll() {
+        for (int i = 0; i < employee.length; i++) {
+            System.out.println(employee[i]);
         }
     }
-    public static int totalSalary (Employee[] employees) {
+    public static int totalSalary () {
         int sum = 0;
-        for (int i = 0; i < employees.length; i++) {
-            sum += employees[i].getSalary();
+        for (int i = 0; i < employee.length; i++) {
+            sum += employee[i].getSalary();
         }
         return sum;
     }
 
-    public static Employee getMinSalary (Employee[] employees) {
-        Employee emploeeMinSalary = employees[0];
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() < emploeeMinSalary.getSalary()) {
-                emploeeMinSalary = employees[i];
+    public static Employee getMinSalary () {
+        Employee emploeeMinSalary = employee[0];
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getSalary() < emploeeMinSalary.getSalary()) {
+                emploeeMinSalary = employee[i];
             }
 
         }
         return emploeeMinSalary;
     }
-    public static Employee getMaxSalary (Employee[] employees) {
-        Employee emploeeMaxSalary = employees[0];
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() > emploeeMaxSalary.getSalary()) {
-                emploeeMaxSalary = employees[i];
+    public static Employee getMaxSalary () {
+        Employee emploeeMaxSalary = employee[0];
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getSalary() > emploeeMaxSalary.getSalary()) {
+                emploeeMaxSalary = employee[i];
             }
 
         }
         return emploeeMaxSalary;
     }
-    public static double averageSalary (Employee[] employees) {
-        int salary = totalSalary(employees);
-        return salary/employees.length;
+    public static double averageSalary () {
+        int salary = totalSalary();
+        return salary/ employee.length;
     }
-    public static void getFullname (Employee[]employees) {
-        for (int i = 0; i < employees.length; i++) {
-            System.out.println(employees[i].getFullName());
+    public static void getFullname () {
+        for (int i = 0; i < employee.length; i++) {
+            System.out.println(employee[i].getFullName());
         }
     }
 }
